@@ -1,0 +1,1 @@
+export { publicClient as client, serverClient } from '../lib/sanity';
