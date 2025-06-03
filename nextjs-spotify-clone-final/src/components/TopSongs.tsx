@@ -23,7 +23,7 @@ export default function TopSongs({ initialSongs }: TopSongsProps) {
   if (initialSongs.length === 0) {
     return (
       <div className="w-full px-4 py-4">
-        <h2 className="text-2xl font-bold text-green-700 mb-4 text-center">Top Recent Songs</h2>
+        <h2 className="text-2xl font-bold text-yellow-400 mb-4 text-center">Top Songs</h2>
         <div className="text-gray-400 bg-black/40 p-3 rounded-lg text-sm">
           No songs available yet!
         </div>
@@ -34,7 +34,7 @@ export default function TopSongs({ initialSongs }: TopSongsProps) {
   // Main Render
   return (
     <div className="w-full px-4 py-4">
-      <h2 className="text-2xl font-bold text-green-700 mb-5 text-center">Top Recent Songs</h2>
+      <h2 className="text-2xl font-bold text-yellow-400 mb-5 text-center">Top Songs</h2>
       <div className="flex justify-center gap-3">
         {initialSongs.map((song) => (
           <Link
