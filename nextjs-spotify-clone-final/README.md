@@ -6,12 +6,12 @@ Audiomatrix offers a seamless experience backed by modern web technologies.
 
 ## Core Features
 
-Browse a curated and dynamic music library  
-Add new songs  
-Manage and revisit your favorite tracks  
-Search functionality  
-User Signup & LogIn  
-User authentication  
-Responsive design  
+Browse a curated and dynamic music library
+Add new songs
+Manage and revisit your favorite tracks
+Search functionality
+User Signup & LogIn
+User authentication
+Responsive design
 
 At Audiomatrix, it's not just about listening-it's about owning your sound journey.
