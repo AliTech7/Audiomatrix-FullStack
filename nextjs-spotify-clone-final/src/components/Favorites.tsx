@@ -110,7 +110,7 @@ function Favorites() {
           </Link>
         </div>
 
-        <div className="flex justify-between items-start mb-20 ml-4 px-4 bg-black border border-green-700 rounded-lg w-[1750px] h-[80px]">
+        <div className="flex flex-col sm:flex-row justify-between items-start mb-20 ml-4 px-4 bg-black border border-green-700 rounded-lg w-full max-w-7xl h-auto sm:h-[80px]">
           <h1 className="text-yellow-400 text-xl font-bold mt-5">Favorite Tracks</h1>
           <div className="flex gap-5 mt-1">
             <div className="flex items-center mt-2 gap-2 bg-white/15 px-4 py-2 rounded-full border border-green-700 hover:bg-black transition">
@@ -146,13 +146,13 @@ function Favorites() {
         </div>
 
         {filteredAndSortedFavorites.length === 0 ? (
-          <div className="flex flex-col items-center w-[700px] justify-center p-14 text-center bg-white/5 rounded-lg m-5 border-2 border-yellow-400">
+          <div className="flex flex-col items-center w-full max-w-xl justify-center p-6 sm:p-14 text-center bg-white/5 rounded-lg m-5 border-2 border-yellow-400">
             <FaHeart className="text-3xl text-yellow-400 mb-2 opacity-80" />
             <h2 className="text-xl font-bold text-yellow-400 mb-2">No Favorites Yet</h2>
             <p className="text-gray-100">Browse some tracks and add them to your favorites.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3 px-3">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3 px-3 max-w-screen-xl mx-auto">
             {filteredAndSortedFavorites.map((favorite) => (
               <div
                 key={favorite._id}
