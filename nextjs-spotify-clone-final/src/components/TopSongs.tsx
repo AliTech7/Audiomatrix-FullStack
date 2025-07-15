@@ -40,7 +40,7 @@ export default function TopSongs({ initialSongs }: TopSongsProps) {
           <Link
             href={`/music/${song.slug.current}`}
             key={song._id}
-            className="bg-black/40 p-2 rounded-lg hover:bg-black/70 hover:translate-y-[-3px] transition-all duration-300 w-[180px]"
+            className="bg-black/40 p-2 rounded-lg hover:bg-black/70 hover:translate-y-[-3px] transition-all duration-300 w-full sm:w-[180px] max-w-xs"
           >
             <div className="relative w-full aspect-square mb-1">
               <Image
@@ -53,7 +53,7 @@ export default function TopSongs({ initialSongs }: TopSongsProps) {
               />
             </div>
             <h3 className="text-white text-md font-semibold truncate">{song.title}</h3>
-            <p className="text-gray-400 text-[14px] truncate">{song.artist}</p>
+            <p className="text-gray-400 text-sm sm:text-[14px] truncate">{song.artist}</p>
           </Link>
         ))}
       </div>
