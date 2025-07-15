@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AboutPage = () => {
     return (
-        <div className="flex flex-col gap-y-4 w-full px-6 text-neutral-400 bg-neutral-900 min-h-screen">
+        <div className="flex flex-col gap-y-4 w-full px-4 sm:px-6 text-neutral-400 bg-neutral-900 min-h-screen">
 
             <div className="flex justify-between items-center mb-7 mt-7">
                 <Link
