@@ -152,7 +152,7 @@ function Favorites() {
             <p className="text-gray-100">Browse some tracks and add them to your favorites.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3 px-3">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3 px-3 max-w-screen-xl mx-auto">
             {filteredAndSortedFavorites.map((favorite) => (
               <div
                 key={favorite._id}
