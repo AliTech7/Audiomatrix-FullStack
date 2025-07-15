@@ -42,7 +42,7 @@ export default function TopSongsWrapper() {
         <h2 className="text-2xl font-bold text-yellow-400 mb-4 text-center">Top Songs</h2>
         <div className="flex justify-center gap-2">
           {[...Array(5)].map((_, index) => (
-            <div key={index} className="bg-black/40 p-2 rounded-lg animate-pulse w-[100px]">
+            <div key={index} className="bg-black/40 p-2 rounded-lg animate-pulse w-full sm:w-[100px] max-w-[100px]">
               <div className="w-full aspect-square bg-gray-700 rounded-md mb-1" />
               <div className="h-2 bg-gray-700 rounded w-3/4 mb-1" />
               <div className="h-2 bg-gray-700 rounded w-1/2" />
