@@ -10,16 +10,14 @@ function Library() {
   return (
     <div className="w-full h-full bg-black">
       <div className="px-4 py-2">
- test-vercel-deploy
         <div className="flex flex-col sm:flex-row sm:justify-between text-[#a7a7a7]">
-
-        <div className="flex flex-wrap justify-between text-[#a7a7a7]">
- main
-          <div className="grid grid-flow-col items-center justify-start text-base px-2 py-1">
-            <LuLibrary className="text-2xl" />
-            Your Library
+          <div className="flex flex-wrap justify-between text-[#a7a7a7]">
+            <div className="grid grid-flow-col items-center justify-start text-base px-2 py-1">
+              <LuLibrary className="text-2xl" />
+              Your Library
+            </div>
+            <IoAddOutline className="text-2xl" aria-label="Add icon" />
           </div>
-          <IoAddOutline className="text-2xl" aria-label="Add icon" />
         </div>
       </div>
 
@@ -36,15 +34,13 @@ function Library() {
           </Link>
         </div>
 
-        <div className="bg-[#242424] px-5 py-4 mt-6 rounded-lg flex flex-col items-start text-white rounded-t-lg text-sm">
+        <div className="bg-[#242424] px-5 py-4 mt-6 rounded-lg flex flex-col items-start text-white text-sm">
           Let's Find Some Podcasts
         </div>
       </div>
 
       <div className="flex flex-col mt-4 px-6 items-start">
-        <div
-          className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mb-3"
-        >
+        <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mb-3">
           <GrLanguage />
           English
         </div>
