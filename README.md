@@ -1,6 +1,6 @@
 # Welcome to Audiomatrix
 
-https://www.audiomatrix.ca
+<https://www.audiomatrix.ca>
 
 Audiomatrix is a smart, music platform crafted for those who want full control over how they experience music.
 Whether you're exploring beats, uploading your own tracks, or saving your favorites,
