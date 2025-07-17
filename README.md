@@ -18,6 +18,3 @@ Responsive design
 
 At Audiomatrix, it's not just about listening-it's about owning your sound journey.
 
-### Update
-
-Improved responsive design for mobile. Preparing to push all UI updates live.
