@@ -150,7 +150,7 @@ export default function MusicPage() {
         {musicList.length === 0 ? (
           <p className="text-white">No Music Entries Found.</p>
         ) : (
-          <div className="grid grid-cols-[repeat(auto-fill,_minmax(170px,_1fr))] gap-3">
+          <div className="grid grid-cols-[repeat(auto-fit,_minmax(140px,_1fr))] gap-4">
             {musicList.map((music) => {
               const artistImageUrl = urlFor(music.artistImage)?.url();
               const isFavorited = isFavorite(music._id);
@@ -196,7 +196,7 @@ export default function MusicPage() {
                     )}
                     {music.releaseDate && (
                       <p className="text-gray-400 text-sm">
-                        Released: {new Date(music.releaseDate).toLocaleDateString()}
+                        Date: {new Date(music.releaseDate).toLocaleDateString()}
                       </p>
                     )}
                   </div>

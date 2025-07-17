@@ -9,19 +9,24 @@ export default function ClientLayout({
 }) {
   return (
     <SessionProvider>
-      <header className="bg-black text-yellow-400 p-4 rounded-md border-2 border-b-yellow-400 border-r-black border-l-black border-t-black">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold pl-7">Audiomatrix</h1>
-          <img
-            src="/logo.png"
-            alt="Audiomatrix Logo"
-            className="h-12 w-auto pr-5"
-          />
-        </div>
-      </header>
-      <main className="h-full">
-        {children}
-      </main>
+      <div className="flex flex-col w-full">
+        <header className="bg-black text-yellow-400 p-4 border-b-2 border-yellow-400">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+            <h1 className="text-2xl font-bold pl-2 sm:pl-7 text-center sm:text-left">
+              Audiomatrix
+            </h1>
+            <img
+              src="/logo.png"
+              alt="Audiomatrix Logo"
+              className="h-12 w-auto pr-2 sm:pr-5"
+            />
+          </div>
+        </header>
+
+        <main className="flex-1 w-full">
+          {children}
+        </main>
+      </div>
     </SessionProvider>
   );
-} 
+}

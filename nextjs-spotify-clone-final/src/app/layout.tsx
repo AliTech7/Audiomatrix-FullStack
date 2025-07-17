@@ -15,11 +15,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
-        <Footer />
+      <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
+        <div className="min-h-screen flex flex-col">
+          {/* Main content area with sidebar and page content */}
+          <div className="flex flex-1 flex-col sm:flex-row">
+            <ClientLayout>
+              {children}
+            </ClientLayout>
+          </div>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

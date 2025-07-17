@@ -42,7 +42,7 @@ const AboutPage = () => {
                 <p>
                     At Audiomatrix, it's not just about listening-it's about owning your sound journey.
                 </p>
-                <div className="flex items-center justify-center mt-5">
+                <div className="flex items-center justify-center mt-5 mb-5 sm:mb-0">
                     <img
                         src="/Audiomatrix-90.png"
                         alt="Audiomatrix Logo"

@@ -94,7 +94,7 @@ export default function Login() {
           <div className="rounded-md shadow-sm space-y-4">
             <div>
               <label htmlFor="email" className="text-md font-bold text-white">
-                Email address
+                Email Address
               </label>
               <input
                 id="email"
