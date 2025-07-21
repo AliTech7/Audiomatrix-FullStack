@@ -137,7 +137,7 @@ export default function MusicPage() {
         <div className="flex justify-between items-center mb-7">
           <Link
             href="/"
-            className="pl-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center"
+            className="pl-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center gap-1"
           >
             <span>🏠</span>
             Back to Home
