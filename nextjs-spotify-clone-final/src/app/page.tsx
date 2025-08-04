@@ -95,27 +95,6 @@ export default function Home() {
         <section className="w-full flex justify-center mt-5">
           <div className="flex gap-4 sm:gap-5 overflow-x-auto md:overflow-x-visible md:flex-wrap p-2 sm:p-4 mt-0 mb-8 max-w-5xl scroll-snap-x snap-mandatory justify-center">
 
-            {/* Browse Music Library Card */}
-            <div className="bg-black border-2 border-green-700 rounded-lg overflow-hidden shadow-lg h-[220px] sm:h-[270px] w-[180px] sm:w-[225px] md:max-w-[245px] flex-shrink-0">
-              <Link
-                href="/music"
-                className="w-full h-[70px] sm:h-[90px] bg-black/60 flex items-center justify-center gap-2 border-b-2 border-green-700 hover:bg-purple-950 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl transition duration-700 ease-in-out cursor-pointer text-yellow-400 text-base sm:text-md font-semibold"
-              >
-                <FaMusic className="text-purple-500 text-lg sm:text-xl ml-1" />
-                Browse Music Library
-              </Link>
-              <div className="relative flex items-center justify-center px-2 pt-2">
-                <Image
-                  src="/browse-music-library.png"
-                  alt="Browse Music"
-                  width={180}
-                  height={120}
-                  className="rounded-md w-full h-auto max-w-[180px] sm:max-w-[220px]"
-                  priority
-                />
-              </div>
-            </div>
-
             {/* Add Music Card */}
             <div className="bg-black border-2 border-green-700 rounded-lg overflow-hidden shadow-lg h-[220px] sm:h-[270px] w-[180px] sm:w-[225px] flex-shrink-0">
               <Link
@@ -130,9 +109,30 @@ export default function Home() {
                 <Image
                   src="/add-new-music.png"
                   alt="Music Library"
-                  width={140}
+                  width={180}
                   height={120}
                   className="rounded-md w-full h-auto max-w-[140px] sm:max-w-[180px]"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Browse Music Library Card */}
+            <div className="bg-black border-2 border-yellow-600 rounded-lg overflow-hidden shadow-lg h-[220px] sm:h-[270px] w-[180px] sm:w-[225px] md:max-w-[245px] flex-shrink-0">
+              <Link
+                href="/music"
+                className="w-full h-[70px] sm:h-[90px] bg-black/60 flex items-center justify-center gap-2 border-b-2 border-green-700 hover:bg-purple-950 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl transition duration-700 ease-in-out cursor-pointer text-yellow-400 text-base sm:text-md font-semibold"
+              >
+                
+                Browse Music Library
+              </Link>
+              <div className="relative flex items-center justify-center px-2 pt-2">
+                <Image
+                  src="/browse-music-library.png"
+                  alt="Browse Music"
+                  width={140}
+                  height={120}
+                  className="rounded-md w-full h-auto max-w-[180px] sm:max-w-[220px]"
                   priority
                 />
               </div>
