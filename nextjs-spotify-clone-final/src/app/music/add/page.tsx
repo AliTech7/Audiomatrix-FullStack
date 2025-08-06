@@ -106,10 +106,10 @@ export default function AddMusicPage() {
   };
 
   return (
-    <main className="max-h-screen bg-[#181818] text-white p-8">
+    <main className="min-h-screen bg-[#181818] text-white px-4 py-6 sm:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <div className="flex gap-80">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-80">
 
             <Link
               href="/"
@@ -143,7 +143,7 @@ export default function AddMusicPage() {
           </div>
         </div>
 
-        <h1 className="text-3xl font-bold text-green-600 text-center pt-5">Add New Music</h1>
+        <h1 className="text-3xl sm:text-3xl font-bold text-green-600 text-center pt-5">Add New Music</h1>
 
         {error && (
           <div className="bg-red-500 text-white p-3 rounded mb-4">
@@ -151,100 +151,101 @@ export default function AddMusicPage() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="title" className="block text-md font-medium mb-1">
-              Title <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-              placeholder="Enter song title"
-            />
-          </div>
-          <div>
-            <label htmlFor="artist" className="block text-md font-medium mb-1">
-              Artist <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="artist"
-              name="artist"
-              value={formData.artist}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-              placeholder="Enter artist name"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="coverImage" className="block text-md font-medium mb-1">
-              Cover Image
-            </label>
-            <div className="flex items-center space-x-4">
+        <div className="w-full mt-8 px-2 sm:px-0">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="title" className="block text-md font-medium mb-1">
+                Title <span className="text-red-500">*</span>
+              </label>
               <input
-                type="file"
-                id="coverImage"
-                name="coverImage"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="w-full px-3 py-3 bg-gray-700 rounded-md text-white"
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter song title"
               />
-              {coverImagePreview && (
-                <div className="relative w-20 h-20">
-                  <Image
-                    src={coverImagePreview}
-                    alt="Cover preview"
-                    fill
-                    sizes="80px"
-                    className="object-cover rounded"
-                  />
-                </div>
-              )}
             </div>
-          </div>
-          <div>
-            <label htmlFor="album" className="block text-md font-medium mb-1">
-              Album
-            </label>
-            <input
-              type="text"
-              id="album"
-              name="album"
-              value={formData.album}
-              onChange={handleChange}
-              className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-              placeholder="Enter album name"
-            />
-          </div>
-          <div>
-            <label htmlFor="releaseDate" className="block text-md font-medium mb-1">
-              Release Date
-            </label>
-            <input
-              type="date"
-              id="releaseDate"
-              name="releaseDate"
-              value={formData.releaseDate}
-              onChange={handleChange}
-              className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-            />
-          </div>
+            <div>
+              <label htmlFor="artist" className="block text-md font-medium mb-1">
+                Artist <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="artist"
+                name="artist"
+                value={formData.artist}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter artist name"
+              />
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors disabled:opacity-50"
-          >
-            {loading ? 'Adding...' : 'Add Music'}
-          </button>
-        </form>
+            <div>
+              <label htmlFor="coverImage" className="block text-md font-medium mb-1">
+                Cover Image
+              </label>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <input
+                  type="file"
+                  id="coverImage"
+                  name="coverImage"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="w-full px-3 py-3 bg-gray-700 rounded-md text-white"
+                />
+                {coverImagePreview && (
+                  <div className="relative w-20 h-20">
+                    <Image
+                      src={coverImagePreview}
+                      alt="Cover preview"
+                      fill
+                      sizes="80px"
+                      className="object-cover rounded"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+              <label htmlFor="album" className="block text-md font-medium mb-1">
+                Album
+              </label>
+              <input
+                type="text"
+                id="album"
+                name="album"
+                value={formData.album}
+                onChange={handleChange}
+                className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                placeholder="Enter album name"
+              />
+            </div>
+            <div>
+              <label htmlFor="releaseDate" className="block text-md font-medium mb-1">
+                Release Date
+              </label>
+              <input
+                type="date"
+                id="releaseDate"
+                name="releaseDate"
+                value={formData.releaseDate}
+                onChange={handleChange}
+                className="w-full px-3 py-3 bg-gray-700 rounded-md text-white border border-gray-700 placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition-colors disabled:opacity-50"
+            >
+              {loading ? 'Adding...' : 'Add Music'}
+            </button>
+          </form>
+        </div>
       </div>
     </main>
   );

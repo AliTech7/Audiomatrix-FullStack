@@ -15,4 +15,3 @@ User authentication
 Responsive design
 
 At Audiomatrix, it's not just about listening-it's about owning your sound journey.
-

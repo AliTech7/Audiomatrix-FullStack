@@ -36,6 +36,7 @@ const AboutPage = () => {
                     Search functionality<br />
                     User authentication<br />
                     Responsive design<br />
+                    <span className="text-green-700">More Features Coming Soon...</span><br />
                 </p>
 
                 <br></br>

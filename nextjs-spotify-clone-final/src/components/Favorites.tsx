@@ -98,27 +98,30 @@ function Favorites() {
   }
 
   return (
-    <div className="flex bg-neutral-900">
-      <div className="flex-1 p-8 max-w-screen-xl">
+    <div className="flex bg-neutral-900 w-full">
+      <div className="w-full px-4 max-w-screen-xl mx-auto">
         <div className="flex justify-between items-start mb-8">
           <Link
             href="/"
-            className="pl-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center"
+            className="pl-5 mt-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center"
           >
             <span>🏠</span>
             Back to Home
           </Link>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start mb-20 ml-4 px-4 bg-black border border-green-700 rounded-lg w-full max-w-7xl h-auto sm:h-[80px]">
-          <h1 className="text-yellow-400 text-xl font-bold mt-5">Favorite Tracks</h1>
-          <div className="flex gap-5 mt-1">
-            <div className="flex items-center mt-2 gap-2 bg-white/15 px-4 py-2 rounded-full border border-green-700 hover:bg-black transition">
+        <div className="flex flex-col sm:flex-row justify-between pr-2 items-center items-start gap-4 sm:gap-0 mb-20 ml-4 px-4 bg-black border border-green-700 rounded-lg w-full max-w-7xl h-auto sm:h-[80px]">
+          <h1 className="text-yellow-400 text-xl font-bold mt-4 sm:mt-0">
+            Favorite Tracks
+          </h1>
+
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+            <div className="mb-1 flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full border border-green-700 hover:bg-black transition w-full sm:w-auto">
               <FaFilter className="text-2xl text-yellow-400" />
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="bg-transparent border border-green-700 text-white text-sm font-medium cursor-pointer outline-none"
+                className="bg-transparent border border-green-700 text-white text-sm font-medium cursor-pointer outline-none w-full sm:w-auto"
                 aria-label="Filter tracks"
                 title="Filter tracks"
               >
@@ -128,12 +131,12 @@ function Favorites() {
               </select>
             </div>
 
-            <div className="flex items-center mt-2 gap-2 bg-white/15 px-4 py-2 rounded-full border border-green-700 hover:bg-black transition">
+            <div className="mb-1 flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full border border-green-700 hover:bg-black transition w-full sm:w-auto">
               <FaSort className="text-2xl text-yellow-400" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-transparent border border-green-700 text-white text-sm font-medium cursor-pointer outline-none"
+                className="bg-transparent border border-green-700 text-white text-sm font-medium cursor-pointer outline-none w-full sm:w-auto"
                 aria-label="Sort tracks"
                 title="Sort tracks"
               >
@@ -146,19 +149,19 @@ function Favorites() {
         </div>
 
         {filteredAndSortedFavorites.length === 0 ? (
-          <div className="flex flex-col items-center w-full max-w-xl justify-center p-6 sm:p-14 text-center bg-white/5 rounded-lg m-5 border-2 border-yellow-400">
-            <FaHeart className="text-3xl text-yellow-400 mb-2 opacity-80" />
-            <h2 className="text-xl font-bold text-yellow-400 mb-2">No Favorites Yet</h2>
+          <div className="flex flex-col justify-center w-full max-w-xl justify-center p-4 sm:p-6 text-center bg-white/5 rounded-lg border-2 border-yellow-400">
+            <FaHeart className="text-3xl text-yellow-400 mb-1 opacity-80" />
+            <h2 className="text-xl font-bold text-yellow-400 mb-1">No Favorites Yet</h2>
             <p className="text-gray-100">Browse some tracks and add them to your favorites.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3 px-3 max-w-screen-xl mx-auto">
+          <div className="grid ml-2 mr-1 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-4 sm:gap-y-6 gap-x-2 px-2 mb-2 max-w-screen-xl mx-auto">
             {filteredAndSortedFavorites.map((favorite) => (
               <div
                 key={favorite._id}
-                className="bg-black rounded-lg p-2 transition cursor-pointer relative overflow-hidden hover:translate-y-[-5px] hover:bg-neutral-900 border-2 border-green-700"
+                className="h-auto h-max-[300px] w-full max-w-[200px] bg-black rounded-lg p-2 transition cursor-pointer relative overflow-hidden hover:translate-y-[-5px] hover:bg-neutral-900 border-2 border-green-700"
               >
-                <div className="relative mb-4 rounded-lg overflow-hidden shadow-lg aspect-square">
+                <div className="relative w-full min-w-0 mb-4 rounded-lg overflow-hidden shadow-lg aspect-square">
                   {favorite.music.coverImage && favorite.music.coverImage.asset?._ref ? (
                     <Image
                       src={urlFor(favorite.music.coverImage)?.width(300).height(300).url() || ''}

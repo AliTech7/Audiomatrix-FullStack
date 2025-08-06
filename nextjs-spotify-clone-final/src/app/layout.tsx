@@ -16,6 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
+        {/* Auto logout on browser close */}
+
         <div className="min-h-screen flex flex-col">
           {/* Main content area with sidebar and page content */}
           <div className="flex flex-1 flex-col sm:flex-row">

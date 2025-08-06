@@ -89,7 +89,7 @@ export default function Profile() {
             <div className="max-w-5xl mx-auto px-4 py-5">
                 <div className="flex justify-between items-center mb-7">
                     <Link href="/" className="text-yellow-400 hover:text-green-600 transition-colors">
-                        <span>🏠</span> Back to Home
+                        <span>🏠</span>Back to Home
                     </Link>
                     <button
                         onClick={handleLogout}
