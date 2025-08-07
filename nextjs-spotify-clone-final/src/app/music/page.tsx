@@ -137,12 +137,12 @@ export default function MusicPage() {
         <div className="flex justify-between items-center mb-7">
           <Link
             href="/"
-            className="pl-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center gap-1"
+            className="pl-5 text-yellow-400 hover:text-green-600 transition-colors flex items-center"
           >
             <span>🏠</span>
-            Back to Home
+              Back to Home
           </Link>
-          <h1 className="text-3xl font-bold text-green-600">🎵Music Library</h1>
+          <h1 className="text-2xl font-bold text-green-600">🎵Music Library</h1>
         </div>
 
         <Search musicList={musicList} />
@@ -164,7 +164,7 @@ export default function MusicPage() {
                   <div className="relative h-48">
                     {music.artistImage ? (
                       <Image
-                        src={urlFor(music.artistImage)?.width(300).height(300).url() || ''}
+                        src={urlFor(music.artistImage)?.width(250).height(200).url() || ''}
                         alt={music.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

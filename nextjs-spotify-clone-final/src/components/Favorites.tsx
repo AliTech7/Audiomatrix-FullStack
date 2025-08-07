@@ -149,8 +149,8 @@ function Favorites() {
         </div>
 
         {filteredAndSortedFavorites.length === 0 ? (
-          <div className="flex flex-col justify-center w-full max-w-xl justify-center p-4 sm:p-6 text-center bg-white/5 rounded-lg border-2 border-yellow-400">
-            <FaHeart className="text-3xl text-yellow-400 mb-1 opacity-80" />
+          <div className="flex flex-col w-full max-w-xl justify-center ml-4 mb-2 p-4 sm:p-6 text-center bg-white/5 rounded-lg border-2 border-yellow-400">
+            <FaHeart className="text-3xl text-yellow-400 justify-center mb-1 opacity-80" />
             <h2 className="text-xl font-bold text-yellow-400 mb-1">No Favorites Yet</h2>
             <p className="text-gray-100">Browse some tracks and add them to your favorites.</p>
           </div>

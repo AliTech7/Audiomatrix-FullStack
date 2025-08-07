@@ -4,7 +4,6 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { compare } from 'bcryptjs';
 import { publicClient as client } from '@/lib/sanity';
 
-
 declare module 'next-auth' {
   interface Session extends DefaultSession {
     user: {
@@ -41,16 +40,26 @@ export const authOptions: AuthOptions = {
         }
 
         try {
+          console.log('Fetching user from Sanity...');
           const user = await client.fetch(
             `*[_type == "user" && email == $email][0]`,
             { email: credentials.email }
           );
 
-          if (!user) return null;
+          if (!user) {
+            console.log('No user found with email:', credentials.email);
+            return null;
+          }
 
+          console.log('User found, comparing passwords...');
           const isValid = await compare(credentials.password, user.password);
-          if (!isValid) return null;
 
+          if (!isValid) {
+            console.log('Invalid password for user:', credentials.email);
+            return null;
+          }
+
+          console.log('Authentication successful for user:', credentials.email);
           return {
             id: user._id,
             name: user.name,
@@ -66,19 +75,7 @@ export const authOptions: AuthOptions = {
   ],
   session: {
     strategy: 'jwt' as SessionStrategy,
-    // No MaxAge - Session ends on browser close
-  },
-  cookies: {
-    sessionToken: {
-      name: `next-auth.session-token`,
-      options: {
-        httpOnly: true,
-        sameSite: 'lax',
-        path: '/',
-        secure: process.env.NODE_ENV === 'production',
-        // No MaxAge - browser session cookie
-      },
-    },
+    maxAge: 30 * 24 * 60 * 60, // Session-30 days
   },
   pages: {
     signIn: '/auth/login',
@@ -106,4 +103,4 @@ export const authOptions: AuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST }; 

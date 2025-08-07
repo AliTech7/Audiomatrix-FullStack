@@ -39,11 +39,7 @@ function Library() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-4 px-6 items-start">
-        <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mb-3">
-          <GrLanguage />
-          English
-        </div>
+      <div className="flex flex-col mt-3 px-6 items-start">
         <Link
           href="/about"
           className="flex items-center gap-1 px-3 py-1.5 mt-3 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full hover:text-green-700 transition-colors duration-300"
@@ -52,6 +48,11 @@ function Library() {
           <IoInformationCircleOutline />
           About
         </Link>
+        <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mt-4 mb-3">
+          <GrLanguage />
+          English
+        </div>
+
       </div>
     </div>
   );

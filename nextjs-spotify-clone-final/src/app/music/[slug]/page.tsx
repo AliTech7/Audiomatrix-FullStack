@@ -34,7 +34,7 @@ export default async function PostPage({
     <div className="bg-neutral-900 min-h-screen w-full px-5">
       <Link 
         href="/music" 
-        className="inline-block text-green-600 hover:text-yellow-400 font-medium transition-colors duration-200 text-xl mt-7 ml-4"
+        className="inline-block text-green-600 hover:text-yellow-400 font-medium transition-colors duration-200 text-l mt-7 ml-4"
       >
         🎵Back to Music Library
       </Link>
