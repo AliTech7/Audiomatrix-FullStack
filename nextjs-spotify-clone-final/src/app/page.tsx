@@ -156,7 +156,7 @@ export default function Home() {
                       alt="Login"
                       width={140}
                       height={120}
-                      className="rounded-md w-full h-auto max-w-[140px] sm:max-w-[180px]"
+                      className="rounded-md h-auto max-w-[140px] sm:max-w-[180px]"
                       priority
                     />
                   </div>

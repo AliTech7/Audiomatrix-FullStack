@@ -82,7 +82,7 @@ export default function AddMusicPage() {
 
       if (!response.ok) {
         if (response.status === 409) {
-          setError('This song by this artist already exists in the library. Please try a different title or artist.');
+          setError('This song by this artist already exists in the music library!');
         } else {
           throw new Error(data.error || 'Failed to add music');
         }
@@ -143,10 +143,13 @@ export default function AddMusicPage() {
           </div>
         </div>
 
-        <h1 className="text-3xl sm:text-3xl font-bold text-green-600 text-center pt-5">Add New Music</h1>
+        <h1 className="text-3xl sm:text-3xl font-bold text-green-600 text-center pt-5 mb-2">Add New Music</h1>
 
         {error && (
-          <div className="bg-red-500 text-white p-3 rounded mb-4">
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="bg-red-500 text-white p-3 rounded mb-4">
             {error}
           </div>
         )}
