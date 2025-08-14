@@ -206,7 +206,7 @@ export default function AddMusicPage() {
                       src={coverImagePreview}
                       alt="Cover preview"
                       fill
-                      sizes="80px"
+                      sizes="(max-width: 768px) 80px, 80px"
                       className="object-cover rounded"
                     />
                   </div>

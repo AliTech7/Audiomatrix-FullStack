@@ -152,11 +152,10 @@ export default function Profile() {
                                                     src={imageUrl}
                                                     alt={item.title}
                                                     fill
-                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    sizes="100vw"
                                                     className="object-cover rounded-t-lg"
                                                     priority
                                                     quality={75}
-                                                    loading="eager"
                                                     onError={(e) => {
                                                         const target = e.target as HTMLImageElement
                                                         target.style.display = 'none'

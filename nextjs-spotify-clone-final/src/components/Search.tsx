@@ -27,9 +27,9 @@ function Search({ musicList }: SearchProps) {
   const filteredMusic = searchTerm.trim() === ""
     ? []
     : musicList.filter((music) =>
-        music.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        music.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      music.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      music.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
   return (
     <div className="p-5 bg-neutral-900 rounded-lg mb-6">
@@ -56,8 +56,9 @@ function Search({ musicList }: SearchProps) {
                     src={urlFor(music.artistImage)?.width(300).height(300).url() || ''}
                     alt={music.artist}
                     fill
-                    sizes="180px"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 180px"
                     className="object-cover rounded-full"
+                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-700 rounded-full flex items-center justify-center">

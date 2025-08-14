@@ -32,8 +32,8 @@ export default async function PostPage({
 
   return (
     <div className="bg-neutral-900 min-h-screen w-full px-5">
-      <Link 
-        href="/music" 
+      <Link
+        href="/music"
         className="inline-block text-green-600 hover:text-yellow-400 font-medium transition-colors duration-200 text-l mt-7 ml-4"
       >
         🎵Back to Music Library
@@ -49,6 +49,7 @@ export default async function PostPage({
               alt={music.title || "Music Cover"}
               width={250}
               height={250}
+              sizes="(max-width: 768px) 100vw, 250px"
               className="rounded-lg shadow-lg"
             />
 
