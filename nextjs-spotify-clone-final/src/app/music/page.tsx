@@ -167,6 +167,7 @@ export default function MusicPage() {
                         src={urlFor(music.artistImage)?.width(250).height(200).url() || ''}
                         alt={music.title}
                         fill
+                        priority
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover"
                       />

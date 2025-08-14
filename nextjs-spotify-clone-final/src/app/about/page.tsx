@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 
 const AboutPage = () => {
     return (
@@ -43,11 +44,14 @@ const AboutPage = () => {
                 <p>
                     At Audiomatrix, it's not just about listening-it's about owning your sound journey.
                 </p>
-                <div className="flex items-center justify-center mt-5 mb-5 sm:mb-2">
-                    <img
+                <div className="flex items-center justify-center mt-5 mb-2 sm:mb-2">
+                    <Image
                         src="/Audiomatrix-90.png"
                         alt="Audiomatrix Logo"
-                        className="h-15 w-15 border-2 border-green-700 rounded-full"
+                        width={150}
+                        height={150}
+                        className="border-2 border-green-700 rounded-full"
+                        priority
                     />
                 </div>
             </div>
