@@ -34,21 +34,21 @@ function Library() {
           </Link>
         </div>
 
-        <div className="bg-[#242424] px-5 py-4 mt-6 rounded-lg flex flex-col items-start text-white text-sm">
+        <div className="bg-black px-5 py-4 mt-3 rounded-lg flex flex-col items-start text-white text-sm">
           Let's Find Some Podcasts
         </div>
       </div>
 
-      <div className="flex flex-col mt-3 px-6 items-start">
+      <div className="flex flex-col mt-1 px-6 items-start">
         <Link
           href="/about"
-          className="flex items-center gap-1 px-3 py-1.5 mt-3 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full hover:text-green-700 transition-colors duration-300"
+          className="flex items-center gap-1 px-3 py-1.5 mt-2 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full hover:text-green-700 transition-colors duration-300"
           aria-label="About"
         >
           <IoInformationCircleOutline />
           About
         </Link>
-        <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mt-4 mb-3">
+        <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mt-3 mb-3">
           <GrLanguage />
           English
         </div>

@@ -8,8 +8,9 @@ import LogoutButton from "@/components/LogoutButton";
 import Library from "@/components/Library";
 import TopSongsWrapper from "@/components/TopSongsWrapper";
 import Image from 'next/image';
-import { useState } from "react"; // NEW
-import React from "react"; // NEW
+import { useState } from "react";
+import React from "react";
+import { FaBars, FaTimes } from "react-icons/fa"
 
 export default function Home() {
   const { data: session } = useSession();
@@ -49,11 +50,11 @@ export default function Home() {
       {/* Sidebar Toggle Button-only for mobile */}
       {isMobile && (
         <button
-          onClick={() => setShowLibrary((prev) => !prev)}
+          onClick={() => setShowLibrary(prev => !prev)}
           className="fixed top-4 left-4 z-50 p-2 bg-zinc-800 text-white rounded-md md:hidden shadow-lg focus:outline-none focus:ring-2 focus:ring-green-700"
-          aria-label="Toggle Library Sidebar"
+          aria-label="Toggle Library"
         >
-          &#9776;
+          {showLibrary ? <FaTimes size={22} /> : <FaBars size={22} />}
         </button>
       )}
 
@@ -68,14 +69,15 @@ export default function Home() {
       {/* Sidebar-overlays on mobile, static on desktop */}
       <aside
         className={`
-          ${isMobile
-            ? `fixed top-0 left-0 z-50 h-full w-4/5 max-w-xs bg-[#121212] overflow-y-auto transition-transform duration-300 ease-in-out ${showLibrary ? 'translate-x-0' : '-translate-x-full'}`
-            : 'static z-0 h-full w-[300px] bg-[#121212] overflow-y-auto'}
-        `}
-        style={{ minHeight: '100vh' }}
+    bg-[#121212] overflow-y-auto min-h-screen
+    ${isMobile
+            ? `fixed top-0 left-0 z-50 w-4/5 max-w-xs transition-transform duration-300 ease-in-out ${showLibrary ? 'translate-x-0' : '-translate-x-full'}`
+            : 'static z-0 w-[300px]'}
+  `}
       >
         <Library />
       </aside>
+
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto min-h-screen flex flex-col">
@@ -123,7 +125,7 @@ export default function Home() {
                 href="/music"
                 className="w-full h-[70px] sm:h-[90px] bg-black/60 flex items-center justify-center gap-2 border-b-2 border-green-700 hover:bg-purple-950 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl transition duration-700 ease-in-out cursor-pointer text-yellow-400 text-base sm:text-md font-semibold"
               >
-                
+
                 Browse Music Library
               </Link>
               <div className="relative flex items-center justify-center px-2 pt-2">
