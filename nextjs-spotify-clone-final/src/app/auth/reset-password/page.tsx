@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = 'force-dynamic'
+
 import React, { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
@@ -12,6 +14,10 @@ export default function ResetPassword() {
     const [confirmPassword, setConfirmPassword] = useState("")
     const [message, setMessage] = useState("")
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if(!token) setMessage("Invalid or Missing Token")
+    }, [token])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
