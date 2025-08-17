@@ -18,6 +18,8 @@
     "@sanity/cli": "^3.88.2",
     "@sanity/client": "^7.1.0",
     "@sanity/vision": "^3.88.2",
+    "bcryptjs": "^3.0.2",
+    "nodemailer": "^7.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
@@ -27,6 +29,8 @@
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
     "@sanity/types": "^3.88.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/nodemailer": "^7.0.0",
     "@types/react": "^18.0.25",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.9.0",

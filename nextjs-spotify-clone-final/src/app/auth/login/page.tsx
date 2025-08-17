@@ -20,7 +20,7 @@ export default function Login() {
 
     try {
       console.log('Attempting login with:', { email: formData.email });
-      
+
       const result = await signIn('credentials', {
         email: formData.email,
         password: formData.password,
@@ -35,8 +35,8 @@ export default function Login() {
 
       if (result.error) {
         console.error('Authentication error:', result.error);
-        setError(result.error === 'CredentialsSignin' 
-          ? 'Invalid email or password' 
+        setError(result.error === 'CredentialsSignin'
+          ? 'Invalid email or password'
           : result.error);
         return;
       }
@@ -84,7 +84,7 @@ export default function Login() {
             Log in to your account
           </h2>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
             <div className="bg-red-500 text-white p-3 rounded-md text-sm">
@@ -122,6 +122,15 @@ export default function Login() {
                 onChange={handleChange}
               />
             </div>
+          </div>
+
+          <div className="text-sm text-right mt-1">
+            <Link
+              href="/auth/forgot-password"
+              className="text-blue-400 hover:text-white transition-colors"
+            >
+              Forgot Password!
+            </Link>
           </div>
 
           <div className="text-sm">
