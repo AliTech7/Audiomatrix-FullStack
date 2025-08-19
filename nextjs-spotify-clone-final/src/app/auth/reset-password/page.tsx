@@ -60,12 +60,12 @@ export default function ResetPassword() {
         <div className="min-h-screen flex items-center justify-center bg-neutral-900 text-white">
             <form
                 onSubmit={handleSubmit}
-                className="w-full max-w-md bg-gray-800 p-6 rounded-lg space-y-4"
+                className="w-full max-w-md bg-gray-700 p-6 rounded-lg space-y-4"
             >
                 <h2 className="text-xl font-bold text-green-700 text-center">
                     Reset Password
                 </h2>
-                <p className="text-center text-sm text-gray-400">
+                <p className="text-center text-sm text-gray-500">
                     Enter Your New Password
                 </p>
                 <input
