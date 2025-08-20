@@ -62,7 +62,7 @@ export default function ResetPasswordForm() {
                 onSubmit={handleSubmit}
                 className="w-full max-w-md bg-gray-700 p-6 rounded-lg space-y-4"
             >
-                <h2 className="text-xl font-bold text-green-700 text-center">
+                <h2 className="text-xl font-bold text-green-600 text-center">
                     Reset Password
                 </h2>
                 <p className="text-center text-sm text-white">
@@ -76,14 +76,14 @@ export default function ResetPasswordForm() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full p-2 pr-10 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400"
+                        className="w-full p-2 pr-10 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
                     />
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute inset-y-0 right-3 flex items-center text-gray-400"
                     >
-                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                        {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                     </button>
                 </div>
 
@@ -94,7 +94,7 @@ export default function ResetPasswordForm() {
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
-                        className="w-full p-2 pr-10 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400"
+                        className="w-full p-2 pr-10 rounded-md bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
                     />
                     <button
                         type="button"
