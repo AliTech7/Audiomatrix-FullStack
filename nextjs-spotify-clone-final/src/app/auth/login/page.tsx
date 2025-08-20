@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function Login() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,45 +113,54 @@ export default function Login() {
               <label htmlFor="password" className="text-md font-bold text-white">
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  required
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-white"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className="text-sm text-right mt-1">
-            <Link
-              href="/auth/forgot-password"
-              className="text-blue-400 hover:text-white transition-colors"
-            >
-              Forgot Password!
-            </Link>
-          </div>
+            <div className="text-sm text-right mt-1">
+              <Link
+                href="/auth/forgot-password"
+                className="text-blue-400 hover:text-white transition-colors"
+              >
+                Forgot Password!
+              </Link>
+            </div>
 
-          <div className="text-sm">
-            <Link
-              href="/auth/signup"
-              className="text-blue-400 hover:text-white transition-colors"
-            >
-              Don&apos;t have an account? Sign up
-            </Link>
-          </div>
+            <div className="text-sm">
+              <Link
+                href="/auth/signup"
+                className="text-blue-400 hover:text-white transition-colors"
+              >
+                Don&apos;t have an account? Sign up
+              </Link>
+            </div>
 
-          <div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Logging in...' : 'Log in'}
-            </button>
+            <div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-lg font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? 'Logging in...' : 'Log in'}
+              </button>
+            </div>
           </div>
         </form>
       </div>

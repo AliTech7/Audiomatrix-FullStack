@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function ForgotPassword() {
@@ -28,7 +29,17 @@ export default function ForgotPassword() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-neutral-900 text-white">
+        <div className="min-h-screen flex flex-col items-center justify-center relative bg-neutral-900 text-white">
+
+            {/* Back to Log in Page */}
+            <div className="absolute top-7 left-7 border border-1 border-green-700 rounded p-2">
+                <Link
+                    href="/auth/login"
+                    className="text-md text-yellow-400 hover:text-green-600">
+                    Back to Log In
+                </Link>
+            </div>
+
             <form
                 onSubmit={handleSubmit}
                 className="w-full max-w-md bg-gray-800 p-6 rounded-lg space-y-4"
@@ -36,7 +47,7 @@ export default function ForgotPassword() {
                 <h2 className="text-xl font-bold text-green-700 text-center">
                     Forgot Password
                 </h2>
-                <p className="text-center text-sm text-gray-400">
+                <p className="text-center text-sm text-gray-300">
                     Enter your email to receive a password reset link!
                 </p>
                 <input
@@ -45,7 +56,7 @@ export default function ForgotPassword() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 text-white"
+                    className="w-full p-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-green-500 focus:border-green-500"
                 />
                 <button
                     type="submit"
@@ -59,5 +70,6 @@ export default function ForgotPassword() {
                 )}
             </form>
         </div>
+
     )
 }

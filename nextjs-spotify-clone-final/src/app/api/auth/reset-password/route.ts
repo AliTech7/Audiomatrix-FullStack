@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
         const users = await client.fetch(query, { token, now: Date.now() })
 
         if (!users || users.length === 0) {
-            return NextResponse.json({ message: "Invalid or expired token " }, { status: 400 })
+            return NextResponse.json({ message: "Invalid or expired token" }, { status: 400 })
         }
 
         const user = users[0]

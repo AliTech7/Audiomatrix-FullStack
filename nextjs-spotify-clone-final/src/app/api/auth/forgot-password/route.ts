@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
 
         if (!users || users.length === 0) {
             return NextResponse.json({
-                message: "If your email exists, a reset link was sent",
+                message: "The reset link was sent",
             });
         }
 
@@ -65,14 +65,14 @@ export async function POST(req: NextRequest) {
             to: email,
             subject: "Audiomatrix Password Reset",
             html: `
-            <p>Hello,</p>
+            <p>Hi,</p>
             <p>You requsted a password reset.</p>
             <p>Click this link to reset your password: <a href="${resetLink}">${resetLink}</a></p>
             <p>If you did not request this, ignore this email.</p>`
         })
 
         return NextResponse.json({
-            message: "If your email exists, a reset link was sent",
+            message: "The reset link was sent",
         });
     } catch (err) {
         console.error("Forgot password error:", err);

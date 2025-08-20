@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Eye, EyeOff } from 'lucide-react';
 
 export default function SignUp() {
   const router = useRouter();
@@ -13,6 +14,7 @@ export default function SignUp() {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +64,7 @@ export default function SignUp() {
 
   return (
     <div className="min-h-screen h-full flex flex-col items-center justify-center bg-neutral-900 text-white pb-5">
-      
+
       <div className="flex flex-col space-y-4">
         <Link
           href="/"
@@ -115,27 +117,37 @@ export default function SignUp() {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="password" className="text-md font-bold">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Password"
-            />
-          </div>
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                required
+                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-white"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-green-600 text-white p-3 rounded-xl text-md font-bold hover:bg-[#1ed760] transition disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? 'Creating account...' : 'Sign up'}
-          </button>
+              </button>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-green-600 text-white p-3 rounded-xl text-md font-bold hover:bg-[#1ed760] transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? 'Creating account...' : 'Sign up'}
+            </button>
+          </div>
         </form>
       </div>
-    </div>
+    </div >
   );
 }
