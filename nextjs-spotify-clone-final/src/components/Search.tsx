@@ -36,7 +36,7 @@ function Search({ musicList }: SearchProps) {
       <div className="mb-5">
         <input
           type="text"
-          placeholder="Search for Artists..."
+          placeholder="Search for Tracks..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-3 bg-[#242424] border border-yellow-400 rounded-xl text-white text-base placeholder-gray-400 focus:outline-none focus:bg-[#2a2a2a]"

@@ -101,7 +101,7 @@ export default function ResetPasswordForm() {
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                         className="absolute inset-y-0 right-3 flex items-center text-gray-400"
                     >
-                        {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                        {showConfirmPassword ? <EyeOff size={22} /> : <Eye size={22} />}
                     </button>
                 </div>
 

@@ -47,7 +47,7 @@ export default function ForgotPassword() {
                 <h2 className="text-xl font-bold text-green-700 text-center">
                     Forgot Password
                 </h2>
-                <p className="text-center text-sm text-gray-300">
+                <p className="text-center text-sm text-white">
                     Enter your email to receive a password reset link!
                 </p>
                 <input
