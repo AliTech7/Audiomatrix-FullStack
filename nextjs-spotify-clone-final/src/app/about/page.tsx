@@ -34,9 +34,9 @@ const AboutPage = () => {
                     Browse a curated and dynamic music library<br />
                     Add new songs<br />
                     Manage and revisit your favorite tracks<br />
-                    Search functionality<br />
-                    User authentication<br />
-                    Responsive design<br />
+                    Search for your favorite tracks<br />
+                    User authentication (Sign In/Sign Up)<br />
+                    Fully responsive design<br />
                     <span className="text-green-700">More Features Coming Soon...</span><br />
                 </p>
 

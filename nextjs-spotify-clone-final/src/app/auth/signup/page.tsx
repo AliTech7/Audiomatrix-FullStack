@@ -141,9 +141,9 @@ export default function SignUp() {
             <button
               type="submit"
               disabled={loading}
-              className="bg-green-600 text-white p-3 rounded-xl text-md font-bold hover:bg-[#1ed760] transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-green-600 text-white p-3 mt-3 rounded-xl text-md font-bold hover:bg-[#1ed760] transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Creating account...' : 'Sign up'}
+              {loading ? 'Creating account...' : 'Sign Up'}
             </button>
           </div>
         </form>

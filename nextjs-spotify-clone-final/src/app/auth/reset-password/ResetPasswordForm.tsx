@@ -62,7 +62,7 @@ export default function ResetPasswordForm() {
                 onSubmit={handleSubmit}
                 className="w-full max-w-md bg-gray-700 p-6 rounded-lg space-y-4"
             >
-                <h2 className="text-xl font-bold text-green-600 text-center">
+                <h2 className="text-xl font-bold text-green-700 text-center">
                     Reset Password
                 </h2>
                 <p className="text-center text-sm text-white">

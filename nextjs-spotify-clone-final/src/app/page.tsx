@@ -47,6 +47,13 @@ export default function Home() {
   return (
     <div className="flex flex-col md:flex-row h-full min-h-screen bg-neutral-900 text-white relative">
 
+      {/* Top right Log Out */}
+      {session && (
+        <div className="absolute top-15 md:top-6 right-4 md:right-6 z-50 mt-2 mb-5">
+          <LogoutButton />
+        </div>
+      )}
+
       {/* Sidebar Toggle Button-only for mobile */}
       {isMobile && (
         <button

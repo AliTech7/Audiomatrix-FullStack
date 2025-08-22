@@ -1,7 +1,6 @@
 import React from "react";
 import { LuLibrary } from "react-icons/lu";
 import { IoAddOutline } from "react-icons/io5";
-import { GrLanguage } from "react-icons/gr";
 import { FaHeart } from "react-icons/fa";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import Link from "next/link";
@@ -49,8 +48,7 @@ function Library() {
           About
         </Link>
         <div className="flex items-center gap-1 px-3 py-1.5 border border-[#878787] bg-black text-yellow-400 text-sm rounded-full mt-3 mb-3">
-          <GrLanguage />
-          English
+          Beat Archive
         </div>
 
       </div>
